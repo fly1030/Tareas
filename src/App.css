@@ -3,18 +3,12 @@
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+  height: 60px;
+  margin: 20px;
 }
 
 .App-title {
+  padding-top: 20px;
   font-size: 1.5em;
 }
 
@@ -22,13 +16,32 @@
   font-size: large;
 }
 
+.metadataCard {
+  background-color: LightGrey;
+  margin-right: 20px;
+}
+
 .TareasCard {
   display: flex;
 }
 
-.metadataCard {
-  background-color: LightGrey;
-  margin-right: 20px;
+.TareasHeader {
+  display: flex;
+  background-color: lightBlue;
+  margin-bottom: 10px;
+}
+
+.tareasFolder {
+  display: flex;
+  width: 180px;
+  margin: 6px;
+  border: groove;
+}
+
+.tareasFolderImage {
+  height: 20px;
+  width: 20px;
+  padding-right: 8px;
 }
 
 @keyframes App-logo-spin {
