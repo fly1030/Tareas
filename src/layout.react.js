@@ -1,5 +1,5 @@
 // @flow
-import React from 'React';
+import React from 'react';
 
 type Props = {
   children?: React$Element<any>,
