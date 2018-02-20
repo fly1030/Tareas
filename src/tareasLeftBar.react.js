@@ -3,7 +3,15 @@ import React from 'react';
 import folderImage from './folder-settings-button.svg';
 import './App.css';
 
-class tareasLeftBar extends React.Component <{}> {
+export type keyType = 'Owner' | 'Subscribed' | 'Created';
+
+type State = {
+  selectedKey: keyType,
+};
+
+class tareasLeftBar extends React.Component <State> {
+  state = {selectedKey: 'Owner'}
+
   render() {
     return (
       <div>
@@ -15,10 +23,13 @@ class tareasLeftBar extends React.Component <{}> {
   }
 
   _renderFolderView(title: string) {
+    const onClick = (): void => {
+      this.setState({selectedKey: title});
+    }
     return (
       <div
         className="tareasFolder"
-        onClick={this.props.onClick({title})}
+        onClick={onClick}
         >
         <img src={folderImage} className="tareasFolderImage"/>
         {title}

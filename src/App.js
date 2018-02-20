@@ -2,9 +2,18 @@ import React from 'react';
 import Layout from './layout.react';
 import './App.css';
 import TareasLeftBar from './tareasLeftBar.react';
+import TareasList from './tareasList.react';
 import taskImage from './list.svg';
+import folderImage from './folder-settings-button.svg';
 
-class App extends React.Component <{}> {
+type keyType = 'Owner' | 'Subscribed' | 'Created';
+type State = {
+  selectedKey: keyType,
+};
+
+class App extends React.Component <State> {
+  state = {selectedKey: 'Owner'}
+
   render() {
     return (
       <div>
@@ -14,13 +23,41 @@ class App extends React.Component <{}> {
         </header>
         <Layout className="TareasCard">
           <Layout.Column className="metadataCard">
-            <TareasLeftBar />
+            {this._renderLeftBar()}
           </Layout.Column>
-          <Layout.Column>Task Info</Layout.Column>
+          <Layout.Column>
+            <TareasList selectedKey={this.state.selectedKey}></TareasList>
+          </Layout.Column>
         </Layout>
       </div>
     );
   }
+
+  _renderLeftBar() {
+    return (
+      <div>
+        {this._renderFolderView("Owner")}
+        {this._renderFolderView("Subscribed")}
+        {this._renderFolderView("Created")}
+      </div>
+    );
+  }
+
+  _renderFolderView(title: string) {
+    const onClick = (): void => {
+      this.setState({selectedKey: title});
+    }
+    return (
+      <div
+        className="tareasFolder"
+        onClick={onClick}
+        >
+        <img src={folderImage} className="tareasFolderImage"/>
+        {title}
+      </div>
+    );
+  }
+
 }
 
 export default App;

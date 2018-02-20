@@ -25,12 +25,6 @@
   display: flex;
 }
 
-.TareasHeader {
-  display: flex;
-  background-color: lightBlue;
-  margin-bottom: 10px;
-}
-
 .tareasFolder {
   display: flex;
   width: 180px;
@@ -43,6 +37,17 @@
   width: 20px;
   padding-right: 8px;
 }
+
+.taresList {
+  width: 500px;
+}
+
+.TareasHeader {
+  display: flex;
+  background-color: lightBlue;
+  margin-bottom: 10px;
+}
+
 
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
