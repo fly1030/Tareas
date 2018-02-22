@@ -38,7 +38,7 @@
   padding-right: 8px;
 }
 
-.taresList {
+.tareasList {
   width: 500px;
 }
 
@@ -48,6 +48,25 @@
   margin-bottom: 10px;
 }
 
+.TareasListItem {
+  background-color: lightGrey;
+}
+
+.TareasListItemId {
+  padding-right: 4px;
+}
+
+.TareasListItemOwner {
+  padding-right: 4px;
+}
+
+.TareasListItemTitle {
+  padding-right: 4px;
+}
+
+.TareasListItemStatus {
+  padding-right: 4px;
+}
 
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }

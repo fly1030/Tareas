@@ -75,15 +75,26 @@ class tareasList extends React.Component <Props> {
   _renderTareasList(tasksList: Array<Tareas>) {
     return (
       <div>
-        {tasksList.map(task => {
-          return (
-            <div>
-              <span>`T${task.id}`</span>
-              <span>{task.owner}</span>
-              <span>{task.title}</span>
-              <span>{task.status}</span>
-            </div>
-          );
+        {tasksList.map((index, task) => {
+          if (index % 2 === 0) {
+            return (
+              <div>
+                <span className="TareasListItemId">T{task.id}</span>
+                <span className="TareasListItemOwner">{task.owner}</span>
+                <span className="TareasListItemTitle">{task.title}</span>
+                <span className="TareasListItemStatus">{task.status}</span>
+              </div>
+            );
+          } else {
+            return (
+              <div className="TareasListItem">
+                <span className="TareasListItemId">T{task.id}</span>
+                <span className="TareasListItemOwner">{task.owner}</span>
+                <span className="TareasListItemTitle">{task.title}</span>
+                <span className="TareasListItemStatus">{task.status}</span>
+              </div>
+            );
+          }
         })}
       </div>
     );
